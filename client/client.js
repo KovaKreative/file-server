@@ -30,9 +30,13 @@ const requestFile = function(file) {
 conn.on('data', (data) => {
   const parseData = data.split(':');
   if(parseData[0] === 'file') {
+    console.log(data);
     saveFile(file, parseData[1]);
     return;
   }
   console.log(data);
+  if(parseData[0] === 'err'){
+    process.exit();
+  }
 });
 

@@ -25,7 +25,7 @@ server.on('connection', (client) => {
 });
 
 const sendError = function(client) {
-  client.write("Something went wrong. There may not be such a file in our directory. Please check the filename and try again.");
+  client.write("err:Something went wrong. There may not be such a file in our directory. Please check the filename and try again.");
 };
 
 const sendFile = function(data, client) {
